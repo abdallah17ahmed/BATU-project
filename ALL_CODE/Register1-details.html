@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+  <link rel="icon" type="image/x-icon" href="1734464110329.png">
+    <!-- Adding Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Adding Lightbox Library -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+    <!-- Linking External CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="body1">
+    <header class="header1">
+        <nav>
+            <ul>
+                <li><a href="register-event.html">Register in Events</a></li>
+                <li><a href="past-events.html">Past Events</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="event-title">Annual Tech Conference</h1>
+        
+        <!-- Carousel -->
+        <div id="carouselExampleInterval" class="carousel slide mx-auto" data-bs-ride="carousel" style="max-width: 800px;">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="5000">
+                    <a href="img3/1734362286804.jpg" data-lightbox="event-gallery">
+                        <img src="img3/1734362286804.jpg" class="d-block w-100" alt="Conference Image 1">
+                    </a>
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <a href="img3/1734359989976.jpg" data-lightbox="event-gallery">
+                        <img src="img3/1734359989976.jpg" class="d-block w-100" alt="Conference Image 2">
+                    </a>
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <a href="img3/1734360063944.jpg" data-lightbox="event-gallery">
+                        <img src="img3/1734360063944.jpg" class="d-block w-100" alt="Conference Image 3">
+                    </a>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <section class="description">
+           
+            <p>
+                <span class="strong">Date:</span> 12th September , 2024, 9:00 AM<br>
+                <span class="strong">Location:</span> Conference Room 2
+            </p>
+            <p>
+                Join industry experts for a comprehensive discussion on the latest innovations in technology and their transformative impact on society. This event provides a platform for networking, knowledge sharing, and exploring cutting-edge technological advancements.
+            </p>
+            <p>
+                From breakthrough AI applications to the future of green tech, the conference will cover diverse topics shaping the world of tomorrow. Don't miss this opportunity to engage with leading minds and discover ideas that are revolutionizing industries.
+            </p>
+        </section>
+
+        <!-- "Register for the Event" Button -->
+        <button id="registerBtn" class="btn btn-primary my-3 d-block mx-auto" data-bs-toggle="modal" data-bs-target="#registerModal">Register for the Event</button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="registerModalLabel">Register for the Annual Tech Conference</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="studentName" class="form-label">Student Name:</label>
+                                <input type="text" id="studentName" name="studentName" class="form-control" placeholder="Enter your name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="studentEmail" class="form-label">University Email:</label>
+                                <input type="email" id="studentEmail" name="studentEmail" class="form-control" placeholder="Enter your university email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="studentID" class="form-label">Student ID:</label>
+                                <input type="text" id="studentID" name="studentID" class="form-control" placeholder="Enter your student ID" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="university" class="form-label">University:</label>
+                                <input type="text" id="university" name="university" class="form-control" placeholder="Enter your university name" required>
+                            </div>
+                            <button type="submit" class="btn btn-success w-100">Register</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Adding Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Adding Lightbox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+</body>
+</html>

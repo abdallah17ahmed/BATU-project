@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!-- إعلان عن نوع المستند HTML -->
+<html lang="en">
+  <!-- بداية مستند HTML مع تحديد اللغة الإنجليزية -->
+  <head>
+    <meta charset="UTF-8" />
+    <!-- تعيين ترميز الأحرف (Character Encoding) ليكون UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- تعيين إعدادات العرض لتكون متوافقة مع أجهزة المحمول -->
+    <title>Contact Us</title>
+    <link rel="shortcut icon" href="1734464110329.png" type="image/x-icon">
+    <!-- عنوان الصفحة في شريط المتصفح -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- ربط ملف CSS الذي يحتوي على تنسيقات الصفحة -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    rel="stylesheet"
+  />
+    <!-- ربط مكتبة Font Awesome للحصول على أيقونات مثل البريد الإلكتروني وواتساب -->
+  </head>
+  <body class="contact_us_page">
+    <!-- بداية جسم الصفحة وتعيين فئة (class) لها لتمييز هذه الصفحة -->
+    <header>
+      <h1 class="contact_us_header">Contact Us</h1>
+      <!-- العنوان الرئيسي للصفحة مع تعيين فئة لها لتنسيقها -->
+    </header>
+
+    <div class="contact_us_description">
+      <!-- وصف مختصر للصفحة -->
+      <p>
+        We’re Here to Help! If you have any questions, feedback, or would like
+        to get in touch, don’t hesitate to fill out the form below. Our team is
+        dedicated to providing prompt responses and assistance. We will get back
+        to you as soon as possible to ensure your needs are met.
+      </p>
+      <!-- نص يشرح للمستخدم عن كيفية التواصل معنا -->
+    </div>
+
+    <div class="contact_us_box">
+      <!-- حاوية النموذج -->
+      <form class="contact_us_form" novalidate>
+        <!-- نموذج الاتصال مع تعيين خاصية عدم التحقق من صحة البيانات (novalidate) -->
+        <div class="input_group_contact_us">
+          <!-- حاوية لحقل الإدخال -->
+          <label for="First_name_contact_us">First name*</label>
+          <!-- تسمية الحقل: الاسم الأول -->
+          <input
+            type="text"
+            id="First_name_contact_us"
+            placeholder="Enter your First Name"
+            required
+          />
+          <!-- حقل إدخال للاسم الأول مع تعيين القيمة الافتراضية (placeholder) وتحديد أنه مطلوب -->
+        </div>
+        <div class="input_group_contact_us">
+          <!-- حاوية لحقل الإدخال -->
+          <label for="Last_name_contact_us">Last name*</label>
+          <!-- تسمية الحقل: الاسم الأخير -->
+          <input
+            type="text"
+            id="Last_name_contact_us"
+            placeholder="Enter your Last Name"
+            required
+          />
+          <!-- حقل إدخال للاسم الأخير مع تعيين القيمة الافتراضية (placeholder) وتحديد أنه مطلوب -->
+        </div>
+        <div class="input_group_contact_us">
+          <!-- حاوية لحقل الإدخال -->
+          <label for="Email_contact_us">Email*</label>
+          <!-- تسمية الحقل: البريد الإلكتروني -->
+          <input
+            type="email"
+            id="Email_contact_us"
+            placeholder="Enter your Email"
+            required
+          />
+          <!-- حقل إدخال للبريد الإلكتروني مع تعيين القيمة الافتراضية (placeholder) وتحديد أنه مطلوب -->
+        </div>
+        <div class="input_group_contact_us">
+          <!-- حاوية لحقل الإدخال -->
+          <label for="Message_contact_us">What can we help you with?</label>
+          <!-- تسمية الحقل: ماذا يمكننا مساعدتك به؟ -->
+          <textarea
+            id="Message_contact_us"
+            rows="4"
+            placeholder="Write your message here..."
+            required
+          ></textarea>
+          <!-- حقل نصي متعدد الأسطر لكتابة الرسالة مع تعيين القيمة الافتراضية (placeholder) وتحديد أنه مطلوب -->
+        </div>
+        <button class="contact_us_button" type="submit">Submit</button>
+        <!-- زر الإرسال للنموذج -->
+      </form>
+    </div>
+
+
+        <!-- معلومات التواصل في الفوتر -->
+        <footer class="Knowledge_page_footer">
+          <!-- تذييل الصفحة -->
+          <div>
+              <div class="Knowledge_page_footer_icons">
+                  <!-- أيقونات الشبكات الاجتماعية -->
+                  <a href="#" class="footer_icon"><i class="fab fa-facebook"></i></a>
+                  <a href="#" class="footer_icon"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="footer_icon"><i class="fab fa-linkedin"></i></a>
+                  <a href="#" class="footer_icon"><i class="fab fa-instagram"></i></a>
+              </div>
+              <p>&copy; 2024 IT Department. All Rights Reserved.</p>
+              <!-- نص حقوق الطبع والنشر -->
+          </div>
+      </footer>
+
+      <script >
+        // تحديد النموذج
+  const form = document.querySelector('.contact_us_form');
+  // حدث عند الضغط على زر الإرسال
+  form.addEventListener('submit', function (event) {
+    // منع إرسال النموذج إذا كانت الحقول غير مكتملة
+    if (!form.checkValidity()) {
+      // منع الإرسال
+      event.preventDefault();
+      // عرض رسالة تنبيه
+      alert('Please fill in all required fields before submitting the form.');
+    }
+  });
+      </script>
+
+  </body>
+</html>

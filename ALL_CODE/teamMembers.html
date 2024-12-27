@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Members</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="1734464110329.png" type="image/x-icon" />
+    <link rel="stylesheet" href="styles.css"> <!-- ربط ملف CSS المنفصل -->
+</head>
+<body class="body2">
+    <div class="container custom-form-container">
+        <h1 class="text-center">Register Team Members</h1>
+        <form id="teamForm">
+            <div id="teamMembers" class="mb-3">
+                <div class="row g-2 mb-2">
+                    <div class="col-12 col-md-6">
+                        <label for="memberName1" class="form-label">Member 1 Name:</label>
+                        <input type="text" id="memberName1" class="form-control" required>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <label for="memberID1" class="form-label">Member 1 ID:</label>
+                        <input type="text" id="memberID1" class="form-control" required>
+                    </div>
+                </div>
+            </div>
+           <center> <button type="button" class="btn btn-secondary mb-3 w-100" onclick="addMember()">Add Member</button></center>
+
+            <!-- Project Name Field -->
+            <div class="mb-3">
+                <label for="projectName" class="form-label">Project Name:</label>
+                <input type="text" id="projectName" class="form-control" required>
+            </div>
+
+            <!-- Toggle for Upload Section -->
+            <center><button type="button" class="upload-toggle" onclick="toggleUploadSection()">⇩ Upload Files</button></center>
+
+            <!-- Upload Files Section (Initially Hidden) -->
+            <div class="file-upload-section">
+                <div class="mb-3">
+                    <label for="videoFile" class="form-label">Upload Video:</label>
+                    <input type="file" id="videoFile" class="form-control" accept="video/*" required>
+                </div>
+                <div class="mb-3">
+                    <label for="posterFile" class="form-label">Upload Poster:</label>
+                    <input type="file" id="posterFile" class="form-control" accept="image/*" required>
+                </div>
+                <div class="mb-3">
+                    <label for="bookFile" class="form-label">Upload Book:</label>
+                    <input type="file" id="bookFile" class="form-control" accept="application/pdf" required>
+                </div>
+                <div class="mb-3">
+                    <label for="presentationFile" class="form-label">Upload Presentation:</label>
+                    <input type="file" id="presentationFile" class="form-control" accept="application/pdf" required>
+                </div>
+                <div class="mb-3">
+                    <label for="projectImage" class="form-label">Upload Project Image:</label>
+                    <input type="file" id="projectImage" class="form-control" accept="image/*" required>
+                </div>
+            </div>
+
+          <center> <button type="submit" class="btn btn-primary w-100">Submit</button></center> 
+        </form>
+    </div>
+
+    <div id="thankYouMessage">
+        <div class="message">
+            <strong>Thank you!</strong> Your project has been successfully registered.
+        </div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+    </div>
+
+    <script>
+        let memberCount = 1;
+
+        function addMember() {
+            if (memberCount < 15) {
+                memberCount++;
+                const memberDiv = document.createElement('div');
+                memberDiv.className = "row g-2 mb-2";
+                memberDiv.innerHTML = `
+                    <div class="col-12 col-md-6">
+                        <label for="memberName${memberCount}" class="form-label">Member ${memberCount} Name:</label>
+                        <input type="text" id="memberName${memberCount}" name="memberName" class="form-control" required>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <label for="memberID${memberCount}" class="form-label">Member ${memberCount} ID:</label>
+                        <input type="text" id="memberID${memberCount}" name="memberID" class="form-control" required>
+                    </div>
+                `;
+                document.getElementById('teamMembers').appendChild(memberDiv);
+            } else {
+                alert("The maximum number of members is 15.");
+            }
+        }
+
+        function toggleUploadSection() {
+            const uploadSection = document.querySelector('.file-upload-section');
+            uploadSection.style.display = uploadSection.style.display === 'none' || uploadSection.style.display === '' ? 'block' : 'none';
+        }
+
+        document.getElementById('teamForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Hide the form and show the thank you message
+            document.querySelector('.custom-form-container').style.display = 'none';
+            document.getElementById('thankYouMessage').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

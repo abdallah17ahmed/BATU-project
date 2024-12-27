@@ -1,0 +1,1818 @@
+/* Reset styles */
+.home_page_body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif; /* الخط */
+    background-color: #031716; /* لون الخلفية */
+    color: #6ba3be; /* لون النص الأساسي */
+}
+
+/* Header Styling */
+.home_page_header {
+    background-color: #032f30; /* لون خلفية الشريط */
+    padding: 1rem 2rem; /* الحواف الداخلية */
+    align-items: center; /* توسيط العناصر عموديًا */
+    justify-content: space-between; /* توزيع العناصر أفقيًا */
+    border-bottom: 2px solid #0a7075; /* خط سفلي */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+    position: relative; /* لجعل الـ Sidebar يعتمد عليه */
+    z-index: 10; /* ضمان أن يكون الـ Header في أعلى */
+    transition: top 0.3s; /* تأثير الانتقال */
+}
+
+.home_page_header.sticky {
+    position: fixed;
+    top: 0; /* يكون في أعلى الصفحة */
+    left: 0;
+    right: 0;
+    z-index: 1000; /* تأكد من أن الهيدر يكون فوق العناصر الأخرى */
+}
+
+.home_page_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+/* Menu Icon */
+.home_page_menu_bar {
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #0c969c;
+    transition: transform 0.3s ease, color 0.3s ease;
+    margin-bottom: .3rem;
+}
+
+.home_page_menu_bar:hover {
+    transform: rotate(90deg); /* دوران أيقونة القائمة عند التمرير */
+    color: #d9d9d9; /* لون مختلف عند التمرير */
+}
+
+/* Logo Styling */
+.home_page_logo_text {
+    color: #6ba3be;
+    text-transform: uppercase;
+    font-size: 1.8rem; /* حجم الخط */
+    margin: 0;
+    margin-right: 29rem;
+    font-weight: bold; /* تخانة النص */
+    transition: color 0.3s ease;
+}
+
+.home_page_left {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* مسافة بين الأيقونة والشعار */
+}
+
+/* Navigation Links */
+.home_page_ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 1.5rem; /* مسافة بين العناصر */
+}
+
+.home_page_li {
+    display: inline;
+}
+
+.home_page_li_link {
+    text-decoration: none; /* إزالة التسطير */
+    color: #0c969c; /* لون الروابط */
+    font-size: 1.2rem; /* حجم النص */
+    padding: 0.5rem 1rem; /* حشوة داخل الرابط */
+    transition: all 0.3s ease; /* تأثير السلاسة */
+    border-radius: 0.5rem; /* الحواف المستديرة */
+    white-space: nowrap; /* منع النص من النزول للسطر التالي */
+    position: relative;
+}
+
+.home_page_li_link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #0a7075;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.home_page_li_link:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.home_page_li_link:hover {
+    color: #d9d9d9; /* لون النص عند التمرير */
+}
+
+/* Icon Styling */
+.home_page_li_icon {
+    width: 40px; /* حجم الأيقونة */
+    height: 40px;
+    border-radius: 10%; /* جعلها دائرية */
+    border: 2px solid #6ba3be; /* إطار */
+    box-shadow: 0 0 8px rgba(107, 163, 190, 0.5); /* ظل */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.home_page_li_icon:hover {
+    transform: scale(1.2); /* تكبير الأيقونة */
+    box-shadow: 0 0 15px rgba(107, 163, 190, 0.8); /* تضخيم الظل */
+}
+
+
+/* Sidebar Styling */
+.home_page_sidebar {
+    position: fixed;
+    top: 4.8rem; /* اجعل الـ Sidebar يبدأ أسفل الـ Header */
+    left: -500px; /* مخفي خارج الشاشة */
+    width: 250px;
+    height: calc(100% - 4rem); /* يشغل المساحة المتبقية من الصفحة أسفل الـ Header */
+    background-color: #032f30;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: left 0.3s ease; /* تأثير الحركة */
+    z-index: 1000;
+    padding: 2rem 1rem;
+}
+
+
+.home_page_sidebar.active {
+    left: 0; /* إظهار القائمة */
+}
+
+
+
+.sidebar_ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar_ul li {
+    text-align: left;
+}
+
+/* قائمة الروابط */
+.sidebar_ul li a {
+    text-decoration: none;
+    color: #6ba3be; /* لون النص */
+    font-size: 1.2rem;
+    display: flex; /* استخدام flex لتنسيق الأيقونة والنص */
+    align-items: center; /* توسيط الأيقونة والنص عموديًا */
+    gap: 0.5rem; /* مسافة بين الأيقونة والنص */
+    padding: 10px 0; /* إضافة حشوة عمودية */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* تنسيق الأيقونة */
+.sidebar_ul li a i {
+    font-size: 1.3rem; /* حجم الأيقونة */
+    color: #0c969c; /* لون الأيقونة */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* تغيير لون الأيقونة عند التمرير */
+.sidebar_ul li a:hover i {
+    color: #ffffff;
+    transform: scale(1.2);
+}
+
+/* الخط الفاصل بين العناصر */
+.sidebar_ul li {
+    border-bottom: 1px solid #0a7075; /* إضافة خط فاصل بين العناصر */
+    padding: 0 10px;
+}
+
+/* إزالة الخط بعد آخر عنصر */
+.sidebar_ul li:last-child {
+    border-bottom: none;
+}
+
+/* تأثير عند التمرير على الرابط */
+.sidebar_ul li a:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .home_page_container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .home_page_menu_bar {
+        display: block; /* إظهار أيقونة القائمة في الشاشات الصغيرة */
+    }
+
+    .home_page_logo_text {
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .home_page_ul {
+        display: none; /* إخفاء القائمة عند الشاشات الصغيرة */
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .home_page_sidebar {
+        width: 200px; /* تقليل عرض القائمة الجانبية */
+    }
+
+    .home_page_sidebar.active {
+        left: 0;
+    }
+
+    .sidebar_ul {
+        gap: 1rem;
+    }
+
+    .sidebar_ul li {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .home_page_logo_text {
+        font-size: 1.5rem; /* تقليل حجم الخط للشاشات الصغيرة */
+    }
+
+    .sidebar_ul li a {
+        font-size: 1.1rem; /* تقليل حجم النصوص */
+    }
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+
+.slide {
+    position: relative;
+    min-width: 100%;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(.6); /* تغميق الصورة */
+}
+
+.prev,.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 2rem;
+}
+
+button.prev {
+    left: 20px;
+}
+
+button.next {
+    right: 20px;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* General slider styles */
+
+/* Text overlay */
+.slide-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #ffffff;
+    overflow: hidden; /* مهم لإخفاء النص أثناء الكتابة */
+    white-space: nowrap; /* لمنع النص من الانتقال إلى السطر الثاني */
+    border-right: 2px solid #ffffff; /* يعطي تأثير المؤشر */
+    animation: typing 3s steps(30, end), blink 0.6s step-end infinite;
+}
+
+/* تأثير الكتابة */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* تأثير المؤشر */
+@keyframes blink {
+    from {
+        border-color: transparent;
+    }
+    to {
+        border-color: #ffffff;
+    }
+}
+
+.slide-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #ffffff;
+    animation: fade-in 2s ease-in-out;
+}
+
+
+.slide-text p {
+    font-size: 1.5rem;
+    color: #ffffff;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid #ffffff;
+    animation: typing 4s steps(40, end), blink 0.6s step-end infinite;
+}
+
+
+
+.welcome-section {
+    text-align: center;
+    margin: 50px auto;
+    max-width: 800px;
+    font-family: 'Arial', sans-serif;
+    color: #0c969c;
+  }
+  
+  .welcome-section h2 {
+    font-size: 2.5em;
+    color: #0c969c;
+    margin-bottom: 10px;
+  }
+  
+  .welcome-section p {
+    font-size: 1rem;
+    color: #d9d9d9;
+    line-height: 1.6;
+    margin-bottom: 10rem;
+  }
+
+  .projects_section{
+    text-align: center;
+    margin: 50px auto;
+    max-width: 800px;
+    font-family: 'Arial', sans-serif;
+    color: #0c969c;
+  }
+
+  .projects_section h2 {
+    font-size: 2.5em;
+    color: #0c969c;
+    margin-bottom: 10px;
+  }
+  
+  .projects_section p {
+    font-size: 1rem;
+    color: #d9d9d9;
+    line-height: 1.6;
+    margin-bottom: 5rem;
+  }
+
+  .announcement {
+    font-size: 24px;
+    margin-bottom: 20px;
+    margin: 10px 15px 20px 50px;
+    padding: 25px;
+    color: #0c969c;
+    display: flex; /* لعرض النص والصورة بجانب بعض */
+    justify-content: flex-start; /* لمحاذاة المحتوى إلى الشمال */
+    align-items: center; /* لمحاذاة الصورة مع النص في نفس المستوى */
+}
+
+.text-content {
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column; /* وضع النص والزر عموديًا */
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 2rem;
+}
+
+.btn {
+    padding: 1.1em 3em;
+    background: none;
+    border: 2px solid #0c969c;
+    font-size: 15px;
+    color: #0da1a9;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+    border-radius: 12px;
+    background-color: #08494a;
+    font-weight: bolder;
+    box-shadow: 0 2px 0 2px #000;
+    margin-top: 50px; /* فارق بين النص والزر */
+    margin-left: 190px;
+    text-decoration: dashed;
+}
+
+.btn:before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 120%;
+    background-color: #ffffff;
+    top: 50%;
+    transform: skewX(30deg) translate(-150%, -50%);
+    transition: all 0.5s;
+}
+
+.btn:hover {
+    background-color: #0c969c;
+    color: #fff;
+    box-shadow: 0 2px 0 2px #0d3b66;
+}
+
+.btn:hover::before {
+    transform: skewX(30deg) translate(150%, -50%);
+    transition-delay: 0.1s;
+}
+
+.btn:active {
+    transform: scale(0.9);
+}
+/* استعلامات الوسائط لجعل الزر متجاوبًا */
+@media (max-width: 768px) {
+    .btn {
+        padding: 0.8em 1.5em; /* تقليل الحشو للشاشات الصغيرة */
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn {
+        padding: 0.7em 1em;
+        font-size: 13px;
+        border-radius: 8px; /* تقليل الزوايا للشاشات الصغيرة جدًا */
+    }
+}
+
+
+.popo {
+    margin-left: 270px; /* المسافة بين الصورة والنص */
+    margin-bottom: 7rem;
+    display: inline-block; /* جعل الصورة في نفس السطر مع النص */
+    align-items: center; /* لمحاذاة الصورة في نفس مستوى النص */
+    border-radius: 3rem;
+}
+.popo:hover{
+    transform: scale(1); /* تكبير الأيقونة */
+    box-shadow: 0 0 15px rgba(107, 163, 190, 0.8); /* تضخيم الظل */  
+}
+
+.home_page_photo_project{
+    border-radius: 3rem;
+    border: #0c969c .1rem solid;
+}
+
+.home_page_img_ann_btn_container {
+    margin-top: 10rem;
+}
+
+.stats-section {
+    background-color: #032f30;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px 0;
+  }
+
+  .stat-item {
+    text-align: center;
+    color: #d9d9d9;
+    flex: 1;
+    position: relative;
+  }
+
+  .stat-item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.4); /* خط شفاف */
+  }
+
+  .stat-item h1 {
+    font-size: 36px;
+    margin: 0;
+  }
+
+  .stat-item p {
+    margin: 8px 0 0;
+    font-size: 16px;
+  }
+
+  /* استعلامات الوسائط (Responsive Design) */
+@media screen and (max-width: 1024px) {
+    .btn {
+      margin-left: 120px; /* تقليل المسافة على الشاشات المتوسطة */
+    }
+  
+    .popo {
+      margin-left: 150px; /* تقليل المسافة بين الصورة والنص */
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .welcome-section h2,
+    .projects_section h2 {
+      font-size: 2em;
+    }
+  
+    .btn {
+      margin-left: 50px; /* تقليل المسافة بشكل أكبر */
+    }
+  
+    .popo {
+      margin-left: 50px;
+      margin-bottom: 5rem;
+    }
+  
+    .announcement {
+      flex-direction: column; /* تحويل النص والصورة إلى عمودي */
+      align-items: flex-start;
+    }
+  
+    .text-content {
+      align-items: center; /* محاذاة النص في الوسط */
+      margin-left: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .stats-section {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .stat-item:not(:last-child)::after {
+      width: 80%; /* لتناسب الخط مع الوضع الرأسي */
+      height: 1px;
+      top: auto;
+      bottom: 0;
+      left: 10%;
+    }
+  }
+
+/* تنسيق التذييل */
+.home_page_first_footer {
+    background-color: #031716; /* لون الخلفية */
+    color: #d9d9d9; /* لون النص */
+    padding: 2rem 1rem; /* حشوة داخلية */
+    font-family: Arial, sans-serif;
+    border-top: 3px solid #0a7075; /* خط علوي */
+    margin-top: 5rem;
+    
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap; /* لجعل الأقسام مرنة */
+    justify-content: space-between; /* توزيع العناصر بشكل متساوٍ */
+    max-width: 1200px;
+    margin: 0 auto; /* توسيط العناصر */
+}
+
+.footer-section {
+    flex: 1 1 22%; /* عرض الأقسام بنحو متساوٍ */
+    margin: 1rem; /* مسافة بين الأقسام */
+}
+
+.footer-section h3 {
+    color: #0c969c; /* لون العناوين */
+    font-size: 1.5rem;
+    margin-bottom: 1rem; /* مسافة أسفل العنوان */
+    border-bottom: 2px solid #0a7075; /* خط تحت العنوان */
+    padding-bottom: 0.5rem;
+}
+
+.footer-section p, .footer-section ul {
+    font-size: 1rem;
+    line-height: 1.8; /* تحسين ارتفاع النص */
+}
+
+.footer-section a {
+    color: #d9d9d9; /* لون الروابط */
+    text-decoration: none; /* إزالة التسطير */
+}
+
+.footer-section a:hover {
+    color: #0c969c; /* لون عند التمرير */
+}
+
+/* تنسيق الروابط السريعة */
+.footer-section ul {
+    list-style: none; /* إزالة النقط */
+    padding: 0; /* إزالة الحشوة الداخلية */
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* أيقونات وسائل التواصل الاجتماعي */
+.social-icons a {
+    display: inline-block; /* جعل الأيقونات في خط واحد */
+    margin-right: 1rem; /* مسافة بين الأيقونات */
+    font-size: 1.5rem;
+    color: #d9d9d9; /* لون الأيقونة */
+    transition: color 0.3s ease; /* تأثير سلس عند التغيير */
+}
+
+.social-icons a:hover {
+    color: #0c969c; /* لون عند التمرير */
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2)
+}
+
+/* تصميم متجاوب */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* عرض الأقسام فوق بعضها */
+    }
+
+    .footer-section {
+        flex: 1 1 100%; /* عرض كامل القسم */
+        text-align: center; /* توسيط النص */
+    }
+
+    .social-icons {
+        margin-top: 1rem; /* إضافة مسافة أعلى وسائل التواصل */
+    }
+}
+
+
+/* //////////////////////////////////////////////////////////////////////////////////////// */
+                                        /*news_page*/
+/* الأساسيات */
+/* ضبط صفحة الأخبار */
+.news_page {
+    background-color: #031716; /* تحديد لون خلفية الصفحة */
+    font-family: Arial, sans-serif; /* تحديد الخط المستخدم في الصفحة */
+    margin: 0; /* إزالة المسافة الخارجية الافتراضية */
+    padding: 0; /* إزالة المسافة الداخلية الافتراضية */
+}
+
+/* تنسيق الهيدر الخاص بالصفحة */
+.news_page_header {
+    color: #0a7075; /* تحديد لون النص */
+    padding: 1rem 0; /* إضافة حشوة داخلية أعلى وأسفل */
+    font-size: 2rem; /* ضبط حجم الخط */
+    margin: 0; /* إزالة المسافة الخارجية */
+    background-color: #032f30; /* تحديد لون خلفية الهيدر */
+    border-bottom: 3px solid #0a7075; /* إضافة خط سفلي */
+    text-align: center; /* توسيط النص داخل الهيدر */
+}
+
+/* وصف الصفحة */
+.news_page_description {
+    margin: 1rem auto; /* مسافة خارجية متساوية أعلى وأسفل وتوسيط العنصر أفقياً */
+    padding: 2rem 3rem; /* حشوة داخلية حول النص */
+    color: #6ba3be; /* لون النص */
+    font-size: 1.1rem; /* حجم النص */
+    text-align: center; /* توسيط النص */
+    line-height: 1.5; /* ارتفاع السطر لتحسين قابلية القراءة */
+    max-width: 9000px; /* تحديد أقصى عرض للنص */
+}
+
+
+/* الصور وأوصافها */
+/* تصميم المربعات المحتوية على الأخبار */
+.projects_news_box,
+.book_news_box,
+.video_news_box {
+    display: block; /* عرض المربعات كعناصر كتلية */
+    margin: 2rem auto; /* إضافة مسافة خارجية وتوسيط المربعات أفقياً */
+    text-align: center; /* توسيط النصوص بداخلها */
+    width: 90%; /* عرض العنصر يساوي 90% من عرض الشاشة */
+}
+
+/* تنسيق الصور داخل الصفحة */
+.news_page_image_projects,
+.news_page_image_book,
+.news_page_image_video {
+    width: 100%; /* الصور تأخذ عرض العنصر الأب */
+    height: auto; /* الحفاظ على النسبة بين العرض والطول */
+    box-shadow: 0 2px 10px rgba(87, 86, 86, 0.922); /* إضافة ظل خفيف للصورة */
+    border: 0.1rem solid #0a7075; /* تحديد إطار للصورة */
+    margin-top: 2rem; /* مسافة بين الصورة والعناصر التي قبلها */
+    border-radius: 2rem; /* جعل حواف الصورة دائرية */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* إضافة تأثيرات سلسة عند التمرير بالفأرة */
+}
+
+.news_page_image_projects{
+    margin-top: 0rem;
+}
+
+/* تأثير التمرير بالفأرة على الصور */
+.news_page_image_projects:hover,
+.news_page_image_book:hover,
+.news_page_image_video:hover {
+    transform: scale(1.05); /* تكبير الصورة قليلاً */
+    box-shadow: 0px 1rem 15rem rgba(0, 0, 0, 0.5); /* إضافة ظل أكبر عند التمرير */
+}
+
+/* تنسيق وصف الأخبار */
+.projects_news_description,
+.book_news_description,
+.video_news_description {
+    margin-top: 0.5rem; /* مسافة بين الوصف والعناصر أعلاه */
+    font-size: 1.2rem; /* حجم النص */
+    color: #0c969c; /* لون النص */
+    text-align: center; /* توسيط النص */
+}
+
+
+/* وسائل العرض المتجاوب */
+/* تصميم خاص بالشاشات المتوسطة والكبيرة */
+@media (min-width: 768px) {
+    .projects_news_box,
+    .book_news_box,
+    .video_news_box {
+        display: inline-block; /* عرض العناصر بجانب بعضها البعض */
+        width: 30%; /* تقسيم العرض إلى 30% لكل عنصر */
+        margin: 1rem 1.5%; /* إضافة مسافة بين العناصر */
+        vertical-align: top; /* محاذاة العناصر إلى الأعلى */
+    }
+
+    .news_page_image_projects,
+    .news_page_image_book,
+    .news_page_image_video {
+        border-radius: 1.5rem; /* تقليل دائرية الحواف */
+    }
+
+    .news_page_description {
+        font-size: 1.2rem; /* تكبير حجم النص للوصف */
+    }
+}
+
+/* تصميم خاص بالشاشات الصغيرة (الجوال) */
+@media (max-width: 480px) {
+    .news_page_header {
+        font-size: 1.5rem; /* تصغير حجم العنوان */
+    }
+
+    .news_page_description {
+        font-size: 1rem; /* تصغير حجم النص للوصف */
+        margin: 1rem auto; /* تقليل المسافة الخارجية */
+    }
+
+    .projects_news_description,
+    .book_news_description,
+    .video_news_description {
+        font-size: 1rem; /* تصغير حجم النص لوصف الأخبار */
+    }
+
+    .news_page_footer {
+        font-size: 0.9rem; /* تصغير حجم النص في التذييل */
+    }
+}
+
+/* //////////////////////////////////////////////////////////////////////////////////////// /////////// */
+                                /*  projects_news_page (in news page) */
+
+/* General Styles */
+.projects_news_body {
+    margin: 0;
+    padding: 0; /* إزالة الهوامش والحشوات الافتراضية */
+    font-family: Arial, sans-serif; /* تحديد نوع الخط */
+    background-color: #031716; /* تحديد لون الخلفية */
+}
+
+/* Title Section */
+.projects_news_title {
+    color: #0a7075; /* تحديد لون النص */
+    padding: 1rem 0; /* إضافة حشوات أعلى وأسفل العنوان */
+    margin: 0; /* إزالة الهوامش */
+    font-size: 2rem; /* تعيين حجم الخط */
+    background-color: #032f30; /* لون الخلفية للعناوين */
+    border-bottom: 3px solid #0a7075; /* إضافة حدود سفلية بلون مميز */
+    text-align: center; /* محاذاة النص في المنتصف */
+}
+
+/* Text Section */
+.projects_news_text {
+    text-align: center; /* محاذاة النص في المنتصف */
+    color: #6ba3be; /* تحديد لون النص */
+    font-size: 1.1rem; /* تحديد حجم النص */
+    margin:2rem 5rem 3rem;/* إضافة مسافة*/
+    padding: 0 1rem; /* إضافة حشوة جانبية للنصوص في الشاشات الصغيرة */
+}
+
+/* Instructions Box */
+.projects_news_instructions {
+    background-color: #032f30; /* تحديد لون خلفية مربع التعليمات */
+    max-width: 800px; /* تحديد أقصى عرض للصندوق */
+    border-radius: 1rem; /* زوايا دائرية للصندوق */
+    padding: 2rem; /* حشوة داخلية للصندوق */
+    box-shadow: 0 2px 10px rgba(87, 86, 86, 0.922); /* ظل للصندوق لجعله بارزًا */
+    border: 0.1rem solid #0a7075; /* إضافة حدود بلون محدد */
+    margin: 0 auto; /* توسيط الصندوق */
+}
+
+/* List Styling */
+.projects_news_ul {
+    padding: 0; /* إزالة الحشوة الافتراضية للقائمة */
+    color: #0a7075; /* تحديد لون النص في القائمة */
+}
+
+.projects_news_li {
+    margin: 1rem 0; /* إضافة مسافة بين العناصر */
+    font-size: 18px; /* حجم الخط للعناصر */
+    color: #6BA3BE; /* لون النص في العناصر */
+}
+
+.projects_news_strong {
+    color: #0a7075; /* لون النص البارز (strong) */
+}
+
+/* Footer Section */
+.projects_news_footer {
+    background-color: #274d60; /* لون خلفية الفوتر */
+    padding: 1.5rem 0; /* حشوة داخلية في الفوتر */
+    margin-top: 10rem; /* مسافة علوية قبل الفوتر */
+    color: #6BA3BE; /* لون النص في الفوتر */
+    text-align: center; /* محاذاة النص في المنتصف */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* إعدادات للشاشات التي عرضها أقل من 768px */
+    .projects_news_title {
+        font-size: 1.5rem; /* تصغير حجم الخط */
+        padding: 1rem; /* تعديل الحشوات */
+    }
+
+    .projects_news_text {
+        font-size: 1rem; /* تقليل حجم النص */
+    }
+
+    .projects_news_instructions {
+        padding: 1rem; /* تقليل الحشوة الداخلية */
+    }
+
+    .projects_news_li {
+        font-size: 16px; /* تقليل حجم النص في العناصر */
+    }
+}
+
+@media (max-width: 480px) {
+    /* إعدادات للشاشات التي عرضها أقل من 480px */
+    .projects_news_title {
+        font-size: 1.2rem; /* تصغير حجم الخط */
+    }
+
+    .projects_news_text {
+        font-size: 0.9rem; /* تصغير حجم النص */
+    }
+
+    .projects_news_instructions {
+        padding: 0.8rem; /* تقليل الحشوة الداخلية للصندوق */
+    }
+
+    .projects_news_li {
+        font-size: 14px; /* تقليل حجم النص في العناصر */
+    }
+}
+
+/* //////////////////////////////////////////////////////////////////////////////////////// */
+                                /*  book_news_page (in news page) */
+/* General Styles */
+.book_instructions_body {
+    margin: 0;
+    padding: 0; /* إزالة الهوامش والحشوات الافتراضية */
+    font-family: Arial, sans-serif; /* تحديد نوع الخط */
+    background-color: #031716; /* تحديد لون الخلفية */
+}
+
+/* Title Section */
+.book_instructions_title {
+    color: #0a7075; /* تحديد لون النص */
+    padding: 1rem 0; /* إضافة حشوات أعلى وأسفل العنوان */
+    margin: 0; /* إزالة الهوامش */
+    font-size: 2rem; /* تعيين حجم الخط */
+    background-color: #032f30; /* لون الخلفية للعناوين */
+    border-bottom: 3px solid #0a7075; /* إضافة حدود سفلية بلون مميز */
+    text-align: center; /* محاذاة النص في المنتصف */
+}
+
+/* Text Section */
+.book_instructions_text {
+    text-align: center; /* محاذاة النص في المنتصف */
+    color: #6ba3be; /* تحديد لون النص */
+    font-size: 1.1rem; /* تحديد حجم النص */
+    line-height: 1.5; /* تعيين ارتفاع الأسطر */
+    margin:2rem 5rem 3rem;/* إضافة مسافة*/
+    padding: 0 1rem; /* إضافة حشوة جانبية للنصوص في الشاشات الصغيرة */
+}
+
+/* Instructions Box */
+.book_instructions_box {
+    background-color: #032f30; /* تحديد لون خلفية مربع التعليمات */
+    max-width: 800px; /* تحديد أقصى عرض للصندوق */
+    border-radius: 1rem; /* زوايا دائرية للصندوق */
+    padding: 2rem; /* حشوة داخلية للصندوق */
+    box-shadow: 0 2px 10px rgba(87, 86, 86, 0.922); /* ظل للصندوق لجعله بارزًا */
+    border: 0.1rem solid #0a7075; /* إضافة حدود بلون محدد */
+    margin: 0 auto; /* توسيط الصندوق */
+}
+
+/* List Styling */
+.book_instructions_ul {
+    padding: 0; /* إزالة الحشوة الافتراضية للقائمة */
+    color: #0a7075; /* تحديد لون النص في القائمة */
+}
+
+.book_instructions_li {
+    margin: 1rem 0; /* إضافة مسافة بين العناصر */
+    font-size: 18px; /* حجم الخط للعناصر */
+    color: #6BA3BE; /* لون النص في العناصر */
+}
+.book_instructions_strong_head{
+    color: #0c969c;/* لون النص البارز (strong) */
+}
+
+.book_instructions_strong {
+    color: #0c969c; /* لون النص البارز (strong) */
+}
+
+.book_instructions_strong_text{
+    color: #0a7075;/* لون النص البارز (strong) */
+}
+
+.book_news_button{
+    margin-top: 4rem;
+    padding:1rem 3rem;
+    background-color: #0a7075;
+    color:#031716 ;
+    border: none; /* إزالة الحدود */
+    border-radius: 5px; /* إضافة زوايا دائرية */
+    font-size: 1rem; /* تحديد حجم الخط */
+    cursor: pointer; /* تغيير شكل المؤشر عند المرور فوق الزر */
+    transition: background-color 0.3s ease; /* إضافة تأثير عند تغيير اللون */
+}
+
+.book_news_button:hover {
+    background-color: #6ba3be; /* تغيير اللون عند مرور الماوس */
+  }
+
+/* Footer Section */
+.book_instructions_footer {
+    background-color: #274d60; /* لون خلفية الفوتر */
+    padding: 1.5rem 0; /* حشوة داخلية في الفوتر */
+    margin-top: 10rem; /* مسافة علوية قبل الفوتر */
+    color: #6BA3BE; /* لون النص في الفوتر */
+    text-align: center; /* محاذاة النص في المنتصف */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* إعدادات للشاشات التي عرضها أقل من 768px */
+    .book_instructions_title {
+        font-size: 1.5rem; /* تصغير حجم الخط */
+        padding: 1rem; /* تعديل الحشوات */
+    }
+
+    .book_instructions_text {
+        font-size: 1rem; /* تقليل حجم النص */
+    }
+
+    .book_instructions_box {
+        padding: 1rem; /* تقليل الحشوة الداخلية */
+    }
+
+    .book_instructions_li {
+        font-size: 16px; /* تقليل حجم النص في العناصر */
+    }
+}
+
+@media (max-width: 480px) {
+    /* إعدادات للشاشات التي عرضها أقل من 480px */
+    .book_instructions_title {
+        font-size: 1.2rem; /* تصغير حجم الخط */
+    }
+
+    .book_instructions_text {
+        font-size: 0.9rem; /* تصغير حجم النص */
+    }
+
+    .book_instructions_box {
+        padding: 0.8rem; /* تقليل الحشوة الداخلية للصندوق */
+    }
+
+    .book_instructions_li {
+        font-size: 14px; /* تقليل حجم النص في العناصر */
+    }
+}                                
+
+/* //////////////////////////////////////////////////////////////////////////////////////// */
+                                /*  video_news_page (in news page) */
+/* General Styles */
+.video_instructions_body {
+    margin: 0;
+    padding: 0; /* إزالة الهوامش والحشوات الافتراضية */
+    font-family: Arial, sans-serif; /* تحديد نوع الخط */
+    background-color: #031716; /* تحديد لون الخلفية */
+}
+
+/* Title Section */
+.video_instructions_title {
+    color: #0a7075; /* تحديد لون النص */
+    padding: 1rem 0; /* إضافة حشوات أعلى وأسفل العنوان */
+    margin: 0; /* إزالة الهوامش */
+    font-size: 2rem; /* تعيين حجم الخط */
+    background-color: #032f30; /* لون الخلفية للعناوين */
+    border-bottom: 3px solid #0a7075; /* إضافة حدود سفلية بلون مميز */
+    text-align: center; /* محاذاة النص في المنتصف */
+}
+
+/* Text Section */
+.video_instructions_text {
+    text-align: center; /* محاذاة النص في المنتصف */
+    color: #6ba3be; /* تحديد لون النص */
+    font-size: 1.1rem; /* تحديد حجم النص */
+    line-height: 1.5; /* تعيين ارتفاع الأسطر */
+    margin:2rem 5rem 3rem;/* إضافة مسافة*/
+    padding: 0 1rem; /* إضافة حشوة جانبية للنصوص في الشاشات الصغيرة */
+}
+
+/* Instructions Box */
+.video_instructions_box {
+    background-color: #032f30; /* تحديد لون خلفية مربع التعليمات */
+    max-width: 800px; /* تحديد أقصى عرض للصندوق */
+    border-radius: 1rem; /* زوايا دائرية للصندوق */
+    padding: 2rem; /* حشوة داخلية للصندوق */
+    box-shadow: 0 2px 10px rgba(87, 86, 86, 0.922); /* ظل للصندوق لجعله بارزًا */
+    border: 0.1rem solid #0a7075; /* إضافة حدود بلون محدد */
+    margin: 0 auto; /* توسيط الصندوق */
+}
+
+/* List Styling */
+.video_instructions_ul {
+    padding: 0; /* إزالة الحشوة الافتراضية للقائمة */
+    color: #0a7075; /* تحديد لون النص في القائمة */
+}
+
+.video_instructions_li {
+    margin: 1rem 0; /* إضافة مسافة بين العناصر */
+    font-size: 18px; /* حجم الخط للعناصر */
+    color: #6BA3BE; /* لون النص في العناصر */
+}
+
+.video_instructions_strong_head{
+    color: #0c969c;
+}
+
+.video_instructions_strong {
+    color: #0a7075; /* لون النص البارز (strong) */
+}
+
+.video_news_button{
+    margin-top: 4rem;
+    padding:1rem 3rem;
+    background-color: #0a7075;
+    color:#031716 ;
+    border: none; /* إزالة الحدود */
+    border-radius: 5px; /* إضافة زوايا دائرية */
+    font-size: 1rem; /* تحديد حجم الخط */
+    cursor: pointer; /* تغيير شكل المؤشر عند المرور فوق الزر */
+    transition: background-color 0.3s ease; /* إضافة تأثير عند تغيير اللون */
+}
+
+.video_news_button:hover {
+    background-color: #6ba3be; /* تغيير اللون عند مرور الماوس */
+  }
+
+/* Footer Section */
+.video_instructions_footer {
+    background-color: #274d60; /* لون خلفية الفوتر */
+    padding: 1.5rem 0; /* حشوة داخلية في الفوتر */
+    margin-top: 10rem; /* مسافة علوية قبل الفوتر */
+    color: #6BA3BE; /* لون النص في الفوتر */
+    text-align: center; /* محاذاة النص في المنتصف */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* إعدادات للشاشات التي عرضها أقل من 768px */
+    .video_instructions_title {
+        font-size: 1.5rem; /* تصغير حجم الخط */
+        padding: 1rem; /* تعديل الحشوات */
+    }
+
+    .video_instructions_text {
+        font-size: 1rem; /* تقليل حجم النص */
+    }
+
+    .video_instructions_box {
+        padding: 1rem; /* تقليل الحشوة الداخلية */
+    }
+
+    .video_instructions_li {
+        font-size: 16px; /* تقليل حجم النص في العناصر */
+    }
+}
+
+@media (max-width: 480px) {
+    /* إعدادات للشاشات التي عرضها أقل من 480px */
+    .video_instructions_title {
+        font-size: 1.2rem; /* تصغير حجم الخط */
+    }
+
+    .video_instructions_text {
+        font-size: 0.9rem; /* تصغير حجم النص */
+    }
+
+    .video_instructions_box {
+        padding: 0.8rem; /* تقليل الحشوة الداخلية للصندوق */
+    }
+
+    .video_instructions_li {
+        font-size: 14px; /* تقليل حجم النص في العناصر */
+    }
+}
+
+/* //////////////////////////////////////////////////////////////////////////////////////// */
+                                     /* contact_us_page */
+/* الأنماط العامة */
+.contact_us_page {
+    margin: 0; /* إزالة الهوامش من جميع الاتجاهات */
+    font-family: Arial, sans-serif; /* تعيين نوع الخط */
+    background-color: #031716; /* تحديد لون خلفية الصفحة */
+    color: #6ba3be; /* تحديد لون النص */
+  }
+  
+  .contact_us_header {
+    text-align: center; /* محاذاة النص في منتصف العنصر */
+    background-color: #032f30; /* تحديد لون الخلفية للـ header */
+    padding: 1rem 0; /* إضافة padding من الأعلى والأسفل */
+    border-bottom: 3px solid #0a7075; /* إضافة حدود سفلية بلون مميز */
+  }
+  
+  .contact_us_header {
+    color: #0a7075; /* تحديد لون النص */
+    font-size: 2rem; /* تعيين حجم الخط */
+    margin: 0; /* إزالة الهوامش */
+  }
+  
+  .contact_us_description {
+    text-align: center; /* محاذاة النص في المنتصف */
+    margin: 2rem 5rem; /* إضافة هوامش من جميع الاتجاهات */
+    font-size: 1.1rem; /* تعيين حجم الخط */
+    line-height: 1.5; /* تعيين ارتفاع الأسطر */
+    color: #6ba3be; /* تحديد لون النص */
+
+  }
+  
+  /* حاوية نموذج الاتصال */
+  .contact_us_box {
+    background-color: #032f30; /* تحديد لون الخلفية */
+    max-width: 500px; /* تعيين الحد الأقصى للعرض */
+    margin: 2rem auto; /* إضافة هوامش من الأعلى والأسفل وتوسيط العنصر */
+    padding: 2rem; /* إضافة padding داخلي */
+    border: 1px solid #0a7075; /* إضافة حدود بلون مميز */
+    border-radius: 1rem; /* إضافة زوايا دائرية */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* إضافة ظل خفيف حول العنصر */
+  }
+  
+  /* الحقول المدخلة */
+  .input_group_contact_us {
+    display: flex; /* استخدام flexbox لتوزيع العناصر */
+    flex-direction: column; /* ترتيب العناصر عموديًا */
+    margin-bottom: 1.5rem; /* إضافة هوامش بين المجموعات */
+  }
+  
+  .input_group_contact_us label {
+    margin-bottom: 0.5rem; /* إضافة هوامش أسفل العنصر */
+    font-size: 1rem; /* تحديد حجم الخط */
+    color: #6ba3be; /* تحديد لون النص */
+  }
+  
+  .input_group_contact_us input,
+  .input_group_contact_us textarea {
+    padding: 0.7rem; /* إضافة padding داخلي */
+    border: 1px solid #0a7075; /* تحديد لون الحدود */
+    border-radius: 5px; /* إضافة زوايا دائرية للحدود */
+    background-color: #0c969c; /* تحديد لون خلفية الحقول */
+    color: #031716; /* تحديد لون النص داخل الحقل */
+    font-size: 1rem; /* تعيين حجم الخط داخل الحقل */
+  }
+  
+  .input_group_contact_us input::placeholder,
+  .input_group_contact_us textarea::placeholder {
+    color: #201f1f; /* تغيير لون النص داخل الـ placeholder */
+    font-size: 0.9rem; /* تحديد حجم الخط داخل الـ placeholder */
+  }
+  
+  .contact_us_button {
+    width: 100%; /* جعل عرض الزر 100% */
+    padding: 0.8rem; /* إضافة padding داخلي */
+    background-color: #0a7075; /* تحديد لون الخلفية */
+    color: #031716; /* تحديد لون النص */
+    border: none; /* إزالة الحدود */
+    border-radius: 5px; /* إضافة زوايا دائرية */
+    font-size: 1rem; /* تحديد حجم الخط */
+    cursor: pointer; /* تغيير شكل المؤشر عند المرور فوق الزر */
+    transition: background-color 0.3s ease; /* إضافة تأثير عند تغيير اللون */
+  }
+  
+  .contact_us_button:hover {
+    background-color: #6ba3be; /* تغيير اللون عند مرور الماوس */
+  }
+  
+  /* الفوتر */
+  .contact_us_footer{
+    background-color: #274d60; /* تحديد لون خلفية الفوتر */
+    color: #6ba3be; /* تحديد لون النص في الفوتر */
+    padding: 2rem 1rem; /* إضافة padding داخل الفوتر */
+    font-size: 1rem; /* تحديد حجم الخط */
+    margin-top: 4rem;
+  }
+  
+  .contact_us_footer_container {
+    display: flex; /* استخدام flexbox لمحاذاة العناصر */
+    justify-content: space-between; /* توزيع المساحة بين العناصر */
+    align-items: center; /* محاذاة العناصر عموديًا */
+    flex-wrap: wrap; /* جعل الفوتر متجاوب */
+    max-width: 1200px; /* تحديد أقصى عرض للفوتر */
+    margin: 0 auto; /* توسيط الفوتر */
+  }
+  
+  .contact_us_footer_text {
+    flex: 1 1 50%; /* تخصيص المساحة للنص داخل الفوتر */
+    text-align: left; /* محاذاة النص لليسار */
+    padding: 0rem 2rem;
+    line-height: 1.6; /* تحديد ارتفاع الأسطر */
+  }
+  
+  .contact_us_footer_contact {
+    flex: 1 1 30%; /* تخصيص المساحة لجزء الاتصال */
+    text-align: left; /* محاذاة النص لليسار */
+  }
+  
+  .contact_us_footer_contact h3 {
+    margin-bottom: 1rem; /* إضافة هوامش أسفل العنوان */
+    color: #0c969c; /* تحديد لون العنوان */
+  }
+  
+  .contact_us_footer_contact ul {
+    list-style: none; /* إزالة النقاط من القوائم */
+    padding: 0; /* إزالة padding */
+    margin: 0; /* إزالة هوامش */
+  }
+  
+  .contact_us_footer_contact li {
+    margin-bottom: 0.5rem; /* إضافة هوامش بين العناصر */
+    display: flex; /* استخدام flexbox لترتيب العناصر */
+    align-items: center; /* محاذاة العناصر عموديًا */
+    justify-content: flex-start; /* محاذاة العناصر من البداية */
+  }
+  
+  .contact_us_footer_contact i {
+    color: #0c969c; /* تحديد لون الأيقونات */
+    margin-right: 0.5rem; /* إضافة هوامش بين الأيقونة والنص */
+    font-size: 1.2rem; /* تحديد حجم الأيقونات */
+  }
+  
+  .contact_us_footer_contact a {
+    color: #6ba3be; /* تحديد لون الروابط */
+    text-decoration: none; /* إزالة التسطير من الروابط */
+    transition: color 0.3s ease; /* إضافة تأثير عند تغيير اللون */
+  }
+  
+  .contact_us_footer_contact a:hover {
+    color: #0a7075; /* تغيير لون الرابط عند مرور الماوس */
+  }
+  
+  /* التصميم المتجاوب */
+  @media (max-width: 768px) {
+    .contact_us_box {
+      max-width: 90%; /* تقليل عرض النموذج */
+      padding: 1.5rem; /* تقليل padding */
+    }
+  
+    .contact_us_header {
+      font-size: 1.5rem; /* تقليل حجم الخط في العنوان */
+    }
+
+    .contact_us_footer_container {
+        flex-direction: column; /* تغيير اتجاه العناصر إلى عمودي (ترتيب عمودي) */
+        text-align: center; /* محاذاة النص في المنتصف */
+      }
+      
+      .contact_us_footer_text,
+      .contact_us_footer_contact {
+        flex: 1 1 100%; /* تعيين العرض إلى 100% لكل عنصر ليأخذ المساحة الكاملة */
+      }
+      
+      .contact_us_footer_contact h3 {
+        margin-bottom: 1rem; /* إضافة مسافة أسفل العنوان */
+      }
+      
+      .contact_us_footer_contact ul {
+        text-align: center; /* محاذاة العناصر داخل قائمة الاتصال إلى المنتصف */
+      }
+    }      
+  
+  @media (max-width: 480px) {
+    .contact_us_description {
+      font-size: 1rem; /* تقليل حجم الخط */
+      margin: 1rem; /* تقليل الهوامش */
+    }
+  
+    .contact_us_box {
+      padding: 1rem; /* تقليل padding داخل النموذج */
+    }
+  
+    .input_group input,
+    .input_group textarea {
+      font-size: 0.9rem; /* تقليل حجم الخط في الحقول */
+    }
+  
+    .contact_us_button {
+      font-size: 0.9rem; /* تقليل حجم الخط في الزر */
+    }
+  }
+  
+  /* إضافة التصميم المتجاوب */
+  @media (max-width: 768px) {
+  }
+
+/* //////////////////////////////////////////////////////////////////////////////////////// */
+                                   /* knowledge_page */
+
+/* الأساسيات */
+.Knowledge_page_body {
+    margin: 0;
+    padding: 0;
+    font-family: 'ADLaM Display', Arial, sans-serif; /* الخط */
+    background-color: #031716; /* لون الخلفية */
+    color: #6ba3be; /* لون النص الأساسي */
+}
+
+/* شريط التنقل */
+.Knowledge_page_nav_bar_main {
+    background-color: #032f30; /* لون خلفية الشريط */
+    padding: 1rem 2rem; /* الحواف الداخلية */
+    display: flex;
+    align-items: center; /* توسيط العناصر عموديًا */
+    justify-content: space-between; /* توزيع العناصر أفقيًا */
+    border-bottom: 2px solid #0a7075; /* خط سفلي */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+}
+
+/* الحاوية */
+.Knowledge_page_container_nav_bar {
+    display: flex;
+    align-items: center; /* توسيط العنوان والقائمة عموديًا */
+    gap: 2rem; /* مسافة بين العنوان والقائمة */
+}
+
+/* عنوان الشريط */
+.Knowledge_page_container_nav_bar h2 {
+    color: #6ba3be; /* لون النص */
+    font-size: 1.8rem; /* حجم الخط */
+    margin: 0;
+    margin-right: 6rem;
+    font-weight: bold; /* تخانة النص */
+}
+
+/* القائمة */
+.Knowledge_page_ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 1.5rem; /* مسافة بين العناصر */
+}
+
+.Knowledge_page_li {
+    position: relative;
+}
+
+.Knowledge_page_li_link {
+    text-decoration: none; /* إزالة التسطير */
+    color: #0c969c; /* لون الروابط */
+    font-size: 1.1rem; /* حجم النص */
+    padding: 0.5rem 1rem; /* حشوة داخل الرابط */
+    transition: all 0.3s ease; /* تأثير السلاسة */
+    border-radius: 0.5rem; /* الحواف المستديرة */
+    white-space: nowrap; /* منع النص من النزول للسطر التالي */
+}
+
+.Knowledge_page_li_link:hover {
+    background-color: #0a7075; /* لون الخلفية عند التمرير */
+    color: #ffffff; /* لون النص عند التمرير */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* ظل عند التمرير */
+}
+
+/* الأيقونة */
+.Knowledge_page_li_icon {
+    width: 40px; /* حجم الأيقونة */
+    height: 40px;
+    border-radius: 50%; /* جعلها دائرية */
+    border: 2px solid #6ba3be; /* إطار */
+    box-shadow: 0 0 8px rgba(107, 163, 190, 0.5); /* ظل */
+    transition: transform 0.3s ease; /* تأثير عند التفاعل */
+}
+
+.Knowledge_page_li_icon:hover {
+    transform: scale(1.1); /* تكبير الأيقونة */
+    box-shadow: 0 0 12px rgba(107, 163, 190, 0.8); /* تضخيم الظل */
+}
+
+/* الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .Knowledge_page_nav_bar_main {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    .Knowledge_page_ul {
+        flex-direction: column; /* ترتيب عمودي للعناصر */
+        gap: 0.75rem; /* تقليل المسافات */
+    }
+
+    .Knowledge_page_li_link {
+        width: 100%; /* عرض كامل للرابط */
+        text-align: left;
+    }
+}
+
+
+
+/* الحاوية الرئيسية */
+.Knowledge_page_container {
+    display: flex; /* عرض مرن */
+    justify-content: space-between; /* توزيع العناصر بالتساوي */
+    align-items: center; /* توسيط العناصر عموديًا */
+    padding: 2rem;
+    margin-bottom: 10rem;
+    background-color: #031716; /* لون الخلفية */
+    color: #ffffff; /* لون النص */
+    gap: 2rem; /* مسافة بين النص والصورة */
+    border-radius: 1rem; /* حواف دائرية */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* ظل الحاوية */
+}
+
+/* النصوص */
+.Knowledge_page_head {
+    font-size: 2.5rem; /* حجم الخط */
+    font-weight: bold; /* تخانة النص */
+    color: #0c969c; /* لون العنوان (البرتقال) */
+    margin: 0;
+    line-height: 1.2; /* ارتفاع السطر */
+}
+
+.Knowledge_page_text {
+    font-size: 1.2rem; /* حجم الخط */
+    color: #d9d9d9; /* لون النص (رمادي فاتح) */
+    margin-top: 1rem;
+    line-height: 1.6; /* ارتفاع السطر للنصوص */
+}
+
+/* الزر */
+.Knowledge_page_button {
+    display: inline-block; /* لعرض الزر */
+    margin-top: 1.5rem; /* مسافة فوق الزر */
+    padding: 0.75rem 1.5rem; /* الحشوة الداخلية */
+    font-size: 1rem; /* حجم النص */
+    font-weight: bold; /* تخانة النص */
+    color: #ffffff; /* لون النص */
+    background-color: #0a7075; /* لون الخلفية */
+    border: none; /* إزالة الإطار */
+    border-radius: 0.5rem; /* حواف مستديرة */
+    text-decoration: none; /* إزالة التسطير */
+    transition: all 0.3s ease; /* تأثير السلاسة */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* ظل للزر */
+}
+
+.Knowledge_page_button:hover {
+    background-color: #6ba3be; /* لون عند التمرير */
+    box-shadow: 0 8px 15px rgba(247, 126, 33, 0.3); /* ظل عند التمرير */
+    transform: translateY(-2px); /* حركة صغيرة عند التمرير */
+}
+
+/* الصورة */
+.Knowledge_page_image {
+    width: 300px; /* عرض الصورة */
+    height: auto; /* الحفاظ على النسبة */
+    border-radius: 1rem; /* حواف دائرية */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* ظل الصورة */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* تأثير السلاسة */
+}
+
+.Knowledge_page_image:hover {
+    transform: scale(1.05); /* تكبير بسيط عند التمرير */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7); /* ظل أكبر عند التمرير */
+}
+
+/* تصميم الـ Footer */
+.Knowledge_page_footer {
+    background-color: #031716; /* لون خلفية داكن */
+    color: #d9d9d9; /* لون النص */
+    padding: 1.5rem 1rem; /* مساحة داخلية */
+    text-align: center; /* توسيط النص */
+    font-family: Arial, sans-serif; /* نوع الخط */
+    border-top: 2px solid #0c969c; /* خط علوي */
+    margin-top: 4rem;
+  }
+  
+  .Knowledge_page_footer p {
+    font-size: 1rem; /* حجم النص */
+    margin: 0.5rem 0; /* مسافة حول النص */
+    line-height: 1.6; /* ارتفاع السطر */
+  }
+  
+  .Knowledge_page_footer_icons {
+    margin: 1rem 0; /* مسافة بين النص والأيقونات */
+  }
+  
+  .footer_icon {
+    display: inline-block; /* ترتيب الأيقونات أفقياً */
+    margin: 0 0.5rem; /* مسافة بين الأيقونات */
+    font-size: 1.5rem; /* حجم الأيقونة */
+    color: #d9d9d9; /* لون الأيقونات */
+    transition: color 0.3s ease, transform 0.3s ease; /* تأثيرات على الحركة */
+  }
+  
+  .footer_icon:hover {
+    color: #0c969c; /* تغيير اللون عند التمرير */
+    transform: scale(1.2); /* تكبير الأيقونة قليلاً */
+  }
+  
+  
+/* استجابة الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .Knowledge_page_container {
+        flex-direction: column; /* ترتيب العناصر عموديًا */
+        align-items: center; /* توسيط العناصر */
+        text-align: center; /* توسيط النصوص */
+        gap: 1.5rem; /* تقليل المسافة */
+    }
+    .Knowledge_page_image {
+        width: 80%; /* عرض مناسب للشاشات الصغيرة */
+    }
+}
+
+/* //////////////////////////////////////////////////////////////////////////////////////// */
+                                        /* nav_Knowledge */
+.kemo_section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+  }
+  .kemo_text {
+    padding-top: 7rem;
+    h1 {
+      /*      شكل الكلام البرتقانى  (اللى ف التصميم ي مازن )      */
+      color: #f5f0cd;
+      font-family: "ADLaM Display", system-ui !important ;
+      font-weight: 400;
+      font-size: 64px;
+      line-height: 83.5px;
+    }
+    p {
+      /*  شكل الكلام الاسود  (اللى ف نفس التصميم ي مازن صحصح معانا ي ريص )   */
+      color: #f5f0cd;
+      font-family: "ADLaM Display", system-ui !important ;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 26.09px;
+      margin-top: 15px;
+    }
+  } 
+  .btn_color {
+    /*    شكل الزرار (اكيد عرفتها المرة دى لوحدك ☺️ )      */
+    background-color: #c9e6f0;
+    color: #f5f0cd;
+    font-family: "ADLaM Display", system-ui !important ;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 31.31px;
+  }
+  .kemo_image {
+    transform: translateY(100px); /*      عشان ارفع الصورة فوق شويا         */
+    width: 30rem;
+    border: 100%;
+    /*      عشان ارفع الصورة فوق شويا         */
+  }
+  .navbar_br,.nav_link{
+    color: #F5F0CD;
+    &:hover{
+      color: #6BA3BE;
+    }
+  }
+  .kemo_image_2 {
+    transform: translateY(200px);
+    transform: translateX(100px);
+    margin-top: 150px;
+    border-radius: 20px;
+    width: 1000px;
+    /*      عشان ارفع الصورة فوق شويا         */
+  }
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////// */
+                                          /* about_bage */
+/* Reset styles */
+.about_bage_body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif; /* الخط */
+    background-color: #031716; /* لون الخلفية */
+}
+
+/* Header Styling */
+.about_bage_header {
+    color: #0a7075; /* تحديد لون النص */
+    padding: 1rem 0; /* إضافة حشوة داخلية أعلى وأسفل */
+    font-size: 2rem; /* ضبط حجم الخط */
+    margin: 0; /* إزالة المسافة الخارجية */
+    background-color: #032f30; /* تحديد لون خلفية الهيدر */
+    border-bottom: 3px solid #0a7075; /* إضافة خط سفلي */
+    text-align: center; /* توسيط النص داخل الهيدر */
+    width: 100%;
+}
+
+.about_bage_header a {
+    text-decoration: none;
+    color: #0a7075;
+    font-size: 2rem;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Card 1 Styling */
+.about_bage_card_1 {
+    padding: 2rem;
+    background-color: #032f30; /* لون الخلفية */
+    border-radius: 0.5rem; /* الحواف المستديرة */
+    box-shadow: 0 2px 10px rgba(87, 86, 86, 0.922); /* ظل للصندوق لجعله بارزًا */
+    border: 0.1rem solid #0a7075; /* إضافة حدود بلون محدد */
+    margin: 2rem auto;
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.about_bage_card_1_h2 {
+    color: #0c969c;
+    font-size: 1.8rem;
+    margin-bottom: 0rem ;
+    transition: color 0.3s ease;
+}
+
+.about_bage_card_1_paragraph {
+    margin-bottom: 0rem ;
+    color: #f0f0f0;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.about_bage_card_1_li {
+    color: #d9d9d9;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.about_bage_card_1_li:hover {
+    color: #ffffff;
+}
+
+/* Card 3 Styling */
+.about_bage_card_2 ,.about_bage_card_3 {
+    padding: 2rem;
+    background-color: #032f30; /* لون الخلفية */
+    border-radius: 0.5rem; /* الحواف المستديرة */
+    box-shadow: 0 2px 10px rgba(87, 86, 86, 0.922); /* ظل للصندوق لجعله بارزًا */
+    border: 0.1rem solid #0a7075; /* إضافة حدود بلون محدد */
+    margin: 2rem auto;
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.about_bage_card_2 img {
+    width: 200px;
+    height: auto;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.about_bage_card_2 img:hover {
+    transform: scale(1.1);
+}
+
+.about_bage_card_3 img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.about_bage_card_3 img:hover {
+    transform: scale(1.1);
+}
+
+.about_bage_card_2_paragraph , .about_bage_card_3_paragraph {
+    color: #d9d9d9;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+    /* Responsive Styles */
+@media (max-width: 768px) {
+    .about_bage_card_1, .about_bage_card_2, .about_bage_card_3 {
+        width: 80%; /* زيادة عرض البطاقات لتناسب الشاشات الصغيرة */
+        padding: 1.5rem; 
+    }
+
+    .about_bage_header {
+        font-size: 1.5rem; 
+    }
+
+    .about_bage_card_1_h2 {
+        font-size: 1.5rem; 
+    }
+
+    .about_bage_card_1_paragraph, 
+    .about_bage_card_2_paragraph, 
+    .about_bage_card_3_paragraph {
+        font-size: 1rem; 
+    }
+
+    .about_bage_card_1_li {
+        font-size: 1rem; 
+    }
+}
+
+@media (max-width: 480px) {
+    .about_bage_header {
+        font-size: 1.2rem; 
+    }
+
+    .about_bage_card_1_h2 {
+        font-size: 1.2rem; 
+    }
+
+    .about_bage_card_1_paragraph, 
+    .about_bage_card_2_paragraph, 
+    .about_bage_card_3_paragraph {
+        font-size: 0.9rem; 
+    }
+
+    .about_bage_card_1_li {
+        font-size: 0.9rem;
+}
+}
+
+  
+
+
+
+
+

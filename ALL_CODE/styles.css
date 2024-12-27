@@ -1,0 +1,965 @@
+       /* الخلفية العامة / / index .html صفحة*/ /* past-events.html */
+.body1 {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #031716; /* اللون العام */
+    color: #fff; /* النصوص الافتراضية */
+}
+
+          /* الهيدر / / index .html صفحة*/ /* past-events.html */
+.header1 {
+    background-color: #032f30; /* لون خلفية الشريط */
+    padding: 1.4rem 2rem; /* الحواف الداخلية */
+    align-items: center; /* توسيط العناصر عموديًا */
+    justify-content: space-between; /* توزيع العناصر أفقيًا */
+    border-bottom: 2px solid #0a7075; /* خط سفلي */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+    position: relative; /* لجعل الـ Sidebar يعتمد عليه */
+    z-index: 10; /* ضمان أن يكون الـ Header في أعلى */
+}
+
+           /* الهيدر / / index .html صفحة*/ /* past-events.html */
+header nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1.5rem; /* مسافة بين العناصر */
+}
+
+          /* الهيدر / / index .html صفحة*/ /* past-events.html */
+header nav ul li {
+    margin: 0 30px;
+}
+
+            /* الهيدر / / index .html صفحة*/ /* past-events.html */
+header nav ul li a {
+    text-decoration: none; /* إزالة التسطير */
+    color: #0c969c; /* لون الروابط */
+    font-size: 1.2rem; /* حجم النص */
+    padding: 0.5rem 1rem; /* حشوة داخل الرابط */
+    transition: all 0.3s ease; /* تأثير السلاسة */
+    border-radius: 0.5rem; /* الحواف المستديرة */
+    white-space: nowrap; /* منع النص من النزول للسطر التالي */
+    position: relative;
+}
+
+            /* الهيدر / / index .html صفحة*/ /* past-events.html */
+header nav ul li a:hover {
+    background-color: #0a7075; /* لون الخلفية عند التمرير */
+    color: #ffffff; /* لون النص عند التمرير */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* ظل عند التمرير */}
+
+                   /* العناوين / / index .html صفحة*/
+h3 {
+    color: #6BA3BE;
+    text-align: center;
+    margin: 40px 0;
+}
+
+                        /* past-events.html */
+h2 {
+    color: #6BA3BE;
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+                    /* تصميم الكروت */ /* past-events.html */
+.past-card {
+    background-color: #6BA3BE; /* خلفية الكارد */
+    border: 2px solid #0C969C; /* الحدود */
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    margin: 40px auto; /* توسيع الهامش العلوي لتباعد عن الهيدر */
+    width: 90%; /* تصغير العرض إلى 90% من عرض الصفحة */
+    max-width: 800px; /* أقصى عرض للكرت */
+    aspect-ratio: 3 / 1; /* نسبة العرض إلى الارتفاع */
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+             /* past-events.html */
+.past-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* تجعل الصورة تملأ الكرت */
+}
+
+             /* past-events.html */
+.past-card h3 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.6); /* خلفية شفافة للنص */
+    color: white;
+    text-align: center;
+    font-size: 18px; /* حجم النص */
+    bottom: 10px;
+    font-size: 16px;
+}
+
+           /* past-events.html */
+.past-card p {
+    margin: 10px 0;
+}
+
+        /* past-events.html */
+.past-card:hover {
+    transform: scale(1.02); /* تكبير بسيط عند التمرير */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* تحسين الظل */
+}
+
+            /* إضافة مسافة بين الكروت */   /* past-events.html */
+.past-card:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+           /* past-events.html */
+.past-card .event-title {
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+}
+
+           /* past-events.html */
+.past-card .event-date, .past-card .event-location, .past-card .event-description {
+    font-size: 16px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+     /* past-events.html */
+.past-card .event-location {
+    font-style: italic;
+}
+
+       /* past-events.html */
+.past-card .event-description {
+    font-style: italic;
+    color: #d1e2e6;
+}
+
+      /* past-events.html */
+      /* التأكد من أن الهيدر لا يغطي المحتوى */
+main {
+    margin-top: 80px; /* إضافة مساحة في أعلى الصفحة ليظهر المحتوى أسفل الهيدر */
+}
+
+        /* past-events.html */
+.past-card:hover {
+    transform: scale(1.02); /* Slight zoom effect on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+            /* past-events.html */
+.past-card:not(:last-child) {
+    margin-bottom: 20px; /* Spacing between cards */
+}
+
+        /* past-events.html */
+            /* العناوين */
+.event-title {
+    font-size: 28px;
+    color: #f1e7e7;
+    text-align: center;
+    margin: 20px 0;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* past-events.html */
+/* السلايدر */
+.carousel-inner {
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-height: 300px; /* تصغير ارتفاع السلايدر */
+    overflow: hidden;
+    max-width: 800px; /* تضييق عرض السلايدر */
+    margin: auto;
+}
+
+/* past-events.html */
+.carousel-item img {
+    object-fit: cover;
+    height: 300px; /* توحيد ارتفاع الصور */
+}
+
+/* past-events.html */
+/* النصوص */
+.description p, .event-info p {
+    line-height: 1.8;
+    color: #ffffff;
+    font-size: 18px;
+    text-align: justify;
+}
+
+/* past-events.html */
+.strong {
+    font-weight: bold;
+    color: #fdfffe; /* برتقالي مميز للكلمات المهمة */
+}
+
+/* past-events.html */
+.highlight {
+    font-weight: bold;
+    color: white;
+    background-color: #007BFF; /* أزرق فاتح للخلفية */
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+
+/* past-events.html */
+/* الروابط */
+.link-text {
+    color: #0615f3; /* لون برتقالي */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* past-events.html */
+@keyframes glowing-text {
+    
+    25% { color: #47f3ff; } 
+    50% { color: #1E90FF; } 
+    75% { color: #87CEEB; } 
+    100% { color: #0077ff; } 
+}
+
+/* past-events.html */
+.event-title {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0;
+    text-transform: uppercase;
+    animation: glowing-text 3s infinite; /* تأثير الحركة */
+    text-shadow: 0 0 10px rgb(255, 68, 0), /* توهج ناري */
+                 0 0 20px rgba(30, 144, 255, 0.6); /* توهج أزرق */
+}
+/* past-events.html */
+/* تنسيقات مربع "شاركنا رأيك" */
+#feedbackForm {
+    background: linear-gradient(to bottom, #032f30, #0a7075, #0c969c, #6ba3be, #274d60);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 600px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+/* past-events.html */
+/* عنوان القسم */
+#feedbackForm .section-title {
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 15px;
+}
+/* past-events.html */
+/* تنسيقات النصوص */
+#feedbackForm label {
+    color: white;
+    font-weight: bold;
+}
+/* past-events.html */
+/* تنسيقات الحقول */
+#feedbackForm input,
+#feedbackForm textarea {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+/* past-events.html */
+/* زر الإرسال */
+#feedbackForm button {
+    background-color: white;
+    color: #032f30;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* past-events.html */
+/* تأثير hover على الزر */
+#feedbackForm button:hover {
+    background-color: #0A7075;
+    color: white;
+}
+/* past-events.html */
+/* تخصيص لون خلفية المودال */
+.modal-content {
+    background-color: #031716; /* اللون الرمادي الفاتح */
+}
+/* past-events.html */
+/* تخصيص لون عنوان المودال */
+.modal-header {
+    background-color: #0C969C; /* الأزرق */
+    color: white;
+}
+/* past-events.html */
+/* تخصيص لون النص داخل المودال */
+.modal-body {
+    color: #333; /* لون النص الداكن */
+}
+/* past-events.html */
+/* تخصيص لون زر الإغلاق */
+.btn-close {
+    color: #007bff; /* الأزرق */
+}
+/* past-events.html */
+/* تخصيص لون أزرار النموذج */
+.btn-success {
+    background-color: #0A7075; /* اللون الأخضر */
+    border-color: #0A7075;
+}
+/* past-events.html */
+/* تخصيص لون النص داخل الحقول */
+.form-label {
+    color: #ffffff; /* الأزرق */
+}
+/* past-events.html */
+/* تخصيص لون الحواف للحقل */
+.form-control {
+    border-color: #007bff; /* الأزرق */
+}
+/* past-events.html */
+/* تخصيص لون الحواف للحقل عند التركيز */
+.form-control:focus {
+    border-color: #28a745; /* الأخضر */
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+/* past-events.html */
+.link-text:hover {
+    text-decoration: underline;
+    color: #C70039; /* لون أحمر غامق عند التمرير */
+
+}
+/* past-events.html */
+/* تحسين العرض */
+.description {
+    font-size: 1rem;
+    line-height: 1.8;
+    text-align: justify; /* يجعل النصوص مريحة للقراءة */
+}
+/* past-events.html */
+/* الهوامش الداخلية */
+.description .event-info {
+    margin-bottom: 1rem;
+}
+
+   /* past-events.html */
+  /* تكبير النصوص الرئيسية */
+.description strong {
+    font-size: 1.1rem;
+}
+
+
+          /* past-events.html */
+           /* استجابة للنصوص */
+@media (max-width: 768px) {
+    .description {
+        padding: 0 15px; /* تقليل الهوامش الداخلية على الهواتف */
+    }
+    .description strong {
+        font-size: 1rem; /* تصغير النصوص قليلاً للشاشات الصغيرة */
+    }
+}
+
+.register-btn {
+    position: absolute; /* تثبيت الزر داخل البطاقة */
+    top: 0; /* محاذاة الزر إلى أعلى البطاقة */
+    right: 0; /* محاذاة الزر إلى أقصى يمين البطاقة */
+    background-color: #007BFF; /* لون الزر */
+    color: white; /* لون النص */
+    border: none; /* إزالة الحدود */
+    padding: 8px 12px; /* حجم الزر */
+    border-radius: 0 5px 0 5px; /*زوايا مستديرة جزئيًا لزر ب */
+    font-size: 1rem; /* حجم النص */
+    cursor: pointer; /* مؤشر اليد عند التمرير فوق الزر */
+    z-index: 10; /* ضمان ظهور الزر فوق باقي العناصر */
+    opacity: 0.9; /* شفافية خفيفة */
+    transition: background-color 0.3s ease, opacity 0.3s ease; /* تأثير سلس عند التمرير */
+  }
+  
+  .register-btn:hover {
+    background-color: #0056b3; /* تغيير لون الزر عند التمرير */
+    opacity: 1; /* إزالة الشفافية */
+  }
+  
+  
+  
+      /* Adjust the table size */
+.table-custom {
+    width: 80%;  /* Adjust the table width to fit the page */
+    margin: 20px auto;  /* Center the table */
+    font-size: 14px;  /* Reduce the font size for compactness */
+}
+
+     /* Apply colors to the table */
+.table-custom thead {
+    background-color: #032F30;  /* Dark color for the header */
+    color: white;
+}
+
+.table-custom tbody tr:nth-child(odd) {
+    background-color: #0C969C;  /* Light teal for odd rows */
+}
+
+.table-custom tbody tr:nth-child(even) {
+    background-color: #6BA3BE;  /* Lighter teal for even rows */
+}
+
+.table-custom th, .table-custom td {
+    border: 1px solid #274D60;  /* Dark teal border color */
+}
+
+/* Apply custom text colors */
+.table-custom th {
+    font-weight: bold;
+}
+
+.table-custom td {
+    color: #ffffff;  /* White text in the table cells */
+}
+
+     /* Adjust font for smaller screens */
+@media (max-width: 767px) {
+    .table-custom {
+        width: 100%;
+        font-size: 12px;
+    }
+}
+     /* login */
+.page-body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('img3/zzzz.jpg') no-repeat center center / cover; /* background image */
+    background-blend-mode: darken; /* blend the image with a dark shade */
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black overlay */
+}
+
+         /* login */
+.login-container {
+    position: relative;
+    background-color: rgba(3, 23, 22, 0.8); /* transparent background for login box */
+    border-radius: 20px; /* rounded corners */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* box shadow */
+    padding: 5%; /* flexible padding */
+    text-align: center;
+    width: 90%; /* flexible width */
+    max-width: 400px; /* max width for the box */
+}
+
+           /* login */
+.login-container h1 {
+    color: #0C969C; /* main color */
+    margin-bottom: 20px;
+    font-size: 1.8rem; /* font size for the header */
+}
+
+         /* login */
+.login-container input {
+    width: 90%; /* input width as a percentage of container */
+    max-width: 350px; /* max width for inputs */
+    padding: 12px;
+    margin: 10px auto; /* equal spacing horizontally and vertically */
+    border: 2px solid #6BA3BE; /* input border color */
+    border-radius: 10px; /* rounded corners */
+    background-color: #032F30; /* background color */
+    color: #fff; /* text color */
+    font-size: 1rem; /* font size */
+    outline: none;
+    display: block; /* each element on a separate line */
+}
+
+        /* login */
+.login-container input::placeholder {
+    color: #6BA3BE; /* placeholder text color */
+}
+
+         /* login */
+.login-container button {
+    width: 90%; /* same width as inputs */
+    max-width: 350px; /* max width for the button */
+    padding: 12px;
+    background-color: #0A7075; /* button color */
+    border: none;
+    border-radius: 20px; /* rounded corners */
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+        /* login */
+.login-container button:hover {
+    background-color: #274D60; /* button color on hover */
+}
+
+        /* login */
+.login-container p {
+    margin-top: 15px;
+    color: #FF5C5C; /* red color for the text */
+}
+
+       /* login */
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-container {
+        padding: 4%; /* decrease padding */
+    }
+    .login-container h1 {
+        font-size: 1.5rem; /* smaller font size for header */
+    }
+}
+
+          /* login */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 3%; /* decrease padding even more */
+    }
+    .login-container h1 {
+        font-size: 1.2rem; /* smaller font size for header */
+    }
+    .login-container input, .login-container button {
+        font-size: 0.9rem; /* smaller font size for inputs and buttons */
+    }
+}
+    /* Add project */
+.body2 {
+    background-image: url('img3/zzzz.jpg'); /* مسار الصورة */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+}
+      /* Add project */
+.form-container1 {
+    max-width: 450px;
+    margin: 50px auto;
+    background-color: rgba(3, 47, 48, 0.9);
+    border: 1px solid #274D60;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+     /* Add project */
+.btn-primary1 {
+    background-color: #0A7075;
+    border: none;
+}
+     /* Add project */
+.btn-primary1:hover {
+    background-color: #0C969C;
+}
+         /* Add project */
+@media (max-width: 576px) {
+    .form-container1 {
+        max-width: 95%; /* عند الشاشات الصغيرة */
+        padding: 15px;
+    }
+}
+
+.custom-form-container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: rgba(3, 47, 48, 0.9);
+    border: 1px solid #274D60;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.btn-secondary, .btn-primary {
+    background-color: #0A7075;
+    border: none;
+}
+
+.btn-secondary:hover, .btn-primary:hover {
+    background-color: #0C969C;
+}
+
+.file-upload-section {
+    display: none;
+    margin-top: 20px;
+}
+
+.upload-toggle {
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+    border: none;
+    background-color: transparent;
+    text-align: center;
+    display: block;
+    margin: 20px 0;
+}
+
+.upload-toggle:hover {
+    color: #0C969C;
+}
+
+.row.g-2 {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 576px) {
+    .custom-form-container {
+        max-width: 95%;
+        padding: 15px;
+    }
+
+    .row.g-2 {
+        flex-direction: column;
+    }
+
+    .col-12.col-md-6 {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+/* Style for Thank You Message */
+#thankYouMessage {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 1.5rem;
+    background-color: rgba(3, 47, 48, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    color: white;
+    max-width: 90%;
+    width: 400px;
+}
+
+#thankYouMessage .message {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+/* Animation for Thank You Message */
+@keyframes fadeInMove {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#thankYouMessage {
+    animation: fadeInMove 1.5s ease-out;
+}
+
+/* Balloon Animation */
+#thankYouMessage .balloon {
+    position: absolute;
+    bottom: -50px;
+    width: 40px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #FF69B4;
+    animation: floatBalloon 4s ease-in-out infinite;
+}
+
+#thankYouMessage .balloon:nth-child(1) {
+    left: 15%;
+    animation-duration: 3s;
+}
+
+#thankYouMessage .balloon:nth-child(2) {
+    left: 35%;
+    animation-duration: 4s;
+}
+
+#thankYouMessage .balloon:nth-child(3) {
+    left: 55%;
+    animation-duration: 5s;
+}
+
+#thankYouMessage .balloon:nth-child(4) {
+    left: 75%;
+    animation-duration: 6s;
+}
+
+@keyframes floatBalloon {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+/*///////////////////////////////////////////////////////////////////////////////////////////////// */
+                                    /* change_pass_page */
+.page-body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('img3/zzzz.jpg') no-repeat center center / cover; /* background image */
+    background-blend-mode: darken; /* blend the image with a dark shade */
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black overlay */
+}
+
+
+.box1 {
+    position: relative;
+    background-color: rgba(3, 23, 22, 0.8); /* خلفية شفافة لمربع تسجيل الدخول */
+    border-radius: 20px; /* حواف دائرية */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* ظل للمربع */
+    padding: 5%; /* حواف مرنة */
+    text-align: center;
+    width: 90%; /* عرض مرن */
+    max-width: 400px; /* الحد الأقصى للعرض */
+}
+
+.head-h2 {
+    color: #0C969C; /* اللون الرئيسي */
+    margin-bottom: 20px;
+    font-size: 1.8rem; /* حجم النص */
+}
+
+.input1 {
+    width: 90%; /* عرض الحقول كنسبة مئوية من عرض المربع */
+    max-width: 350px; /* الحد الأقصى للعرض */
+    padding: 12px;
+    margin: 10px auto; /* تباعد متساوٍ عموديًا وأفقيًا */
+    border: 2px solid #6BA3BE; /* لون الحواف */
+    border-radius: 10px; /* حواف دائرية */
+    background-color: #032F30; /* لون الخلفية */
+    color: #fff; /* لون النص */
+    font-size: 1rem; /* حجم النص */
+    outline: none;
+    display: block; /* جعل العناصر تأخذ صفًا منفصلًا */
+}
+
+ button:hover {
+    color: #6BA3BE; /* لون النص داخل الحقول */
+    background-color: #274D60; /* لون الزر عند التمرير */
+
+}
+
+
+button {
+
+    width: 90%; /* نفس عرض الحقول */
+    max-width: 350px; /* الحد الأقصى للعرض */
+    padding: 12px;
+    background-color: #0A7075; /* لون الزر */
+    border: none;
+    border-radius: 10px; /* حواف دائرية للزر */
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+
+
+/* لجعل التصميم Responsive */
+@media (max-width: 768px) {
+    .login-container {
+        padding: 4%; /* تقليل المسافة الداخلية */
+    }
+    .login-container h1 {
+        font-size: 1.5rem; /* تقليل حجم العنوان */
+    }
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        padding: 3%; /* تقليل المسافة الداخلية */
+    }
+    .login-container h1 {
+        font-size: 1.2rem; /* تقليل حجم النص */
+    }
+    .login-container input, .login-container button {
+        font-size: 0.9rem; /* تصغير النصوص */
+    }
+}
+
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////// */
+                                             /* projects_page */
+/* General Styles */
+.projects-body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #031716;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* يجعل الجسم يغطي الشاشة بالكامل */
+}
+
+.projects-header {
+    color: #0a7075; /* تحديد لون النص */
+    padding: 1rem 0; /* إضافة حشوة داخلية أعلى وأسفل */
+    font-size: 2rem; /* ضبط حجم الخط */
+    margin: 0; /* إزالة المسافة الخارجية */
+    margin-bottom: 3rem;
+    background-color: #032f30; /* تحديد لون خلفية الهيدر */
+    border-bottom: 3px solid #0a7075; /* إضافة خط سفلي */
+    text-align: center; /* توسيط النص داخل الهيدر */
+
+}
+
+
+/* Projects About Section */
+.projects-about {
+    padding: 2rem;
+    background-color: #032f30; /* لون الخلفية */
+    border-radius: 0.5rem; /* الحواف المستديرة */
+    box-shadow: 0 2px 10px rgba(87, 86, 86, 0.922); /* ظل للصندوق لجعله بارزًا */
+    border: 0.1rem solid #0a7075; /* إضافة حدود بلون محدد */
+    margin: 2rem auto;
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.projects-about-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #0C969C;
+}
+
+.projects-about-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #d1e2e6;
+    text-align: center;
+}
+
+/* Button Styling */
+.projects-about-button {
+    display: inline-block; /* لعرض الزر */
+    margin-top: 1.5rem; /* مسافة فوق الزر */
+    padding: 0.75rem 1.5rem; /* الحشوة الداخلية */
+    font-size: 1rem; /* حجم النص */
+    font-weight: bold; /* تخانة النص */
+    color: #ffffff; /* لون النص */
+    background-color: #0a7075; /* لون الخلفية */
+    border: none; /* إزالة الإطار */
+    border-radius: 0.5rem; /* حواف مستديرة */
+    text-decoration: none; /* إزالة التسطير */
+    transition: all 0.3s ease; /* تأثير السلاسة */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* ظل للزر */
+}
+
+/* Hover Effects */
+.projects-about-button:hover {
+    background-color: #6ba3be;
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Featured Projects Section */
+.projects-featured {
+    padding: 2rem;
+}
+
+.projects-cards-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+/* Project Card */
+.projects-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #032F30;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projects-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.projects-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 4px solid #0C969C;
+}
+
+.projects-card-overlay {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.projects-card-title {
+    font-size: 1.5rem;
+    color: #0C969C;
+    margin-bottom: 0.5rem;
+}
+
+.projects-card-description {
+    font-size: 1rem;
+    color: #d9d9d9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .projects-about-title,
+    .projects-featured-title {
+        font-size: 2rem;
+    }
+
+    .projects-cards-container {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-card-title {
+        font-size: 1.2rem;
+    }
+
+    .projects-card-description {
+        font-size: 0.9rem;
+    }
+}

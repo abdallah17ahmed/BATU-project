@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="1734464110329.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="body2">
+    <div class="container form-container1">
+        <h1 class="text-center">Add Project</h1>
+        <form id="leaderForm">
+            <div class="mb-3">
+                <label for="leaderName" class="form-label">Leader Name:</label>
+                <input type="text" id="leaderName" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="leaderPhone" class="form-label">Phone Number:</label>
+                <input type="tel" id="leaderPhone" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="leaderID" class="form-label">ID:</label>
+                <input type="text" id="leaderID" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="teamName" class="form-label">Team Name:</label>
+                <input type="text" id="teamName" class="form-control" required>
+            </div>
+          <center>  <button type="submit" class="btn btn-primary1">Next</button></center>
+        </form>
+    </div>
+    <script>
+        document.getElementById('leaderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            window.location.href = "teamMembers.html";
+        });
+    </script>
+</body>
+</html>

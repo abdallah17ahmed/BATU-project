@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events</title>
+  <link rel="icon" type="image/x-icon" href="1734464110329.png">
+  <link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  rel="stylesheet"
+/>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="body1">
+  <header class="header1">
+    <nav>
+      <ul>
+        <li><a href="register-event.html">Register in Events</a></li>
+        <li><a href="past-events.html">Past Events</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <!-- Event Card 1 -->
+    <div class="card past-card" onclick="location.href='Register1-details.html'" style="cursor: pointer;">
+      <img src="img3/IMG-20241216-WA0001.jpg" alt="Event 1">
+      <button class="register-btn" onclick="event.stopPropagation(); openModal('Annual Tech Conference')">Register now</button>
+      <h3>
+        <span class="event-title">Annual Tech Conference</span><br>
+        <span class="event-date">Date: 12th September , 2024, 9:00 AM</span><br>
+        <span class="event-location">Location: Conference Room 2</span><br>
+        <span class="event-description">Join industry experts for a discussion on the latest innovations in technology and their impact on society.</span>
+      </h3>
+    </div>
+
+    <!-- Event Card 2 -->
+    <div class="card past-card" onclick="location.href='Register2-details.html'" style="cursor: pointer;">
+      <img src="img3/1734344683927.webp" alt="Event 2">
+      <button class="register-btn" onclick="event.stopPropagation(); openModal('Sustainable Development Workshop')">Register now</button>
+      <h3>
+        <span class="event-title">Sustainable Development Workshop</span><br>
+        <span class="event-date">Date: April 10, 2025, 10:00 AM</span><br>
+        <span class="event-location">Location: Workshop Hall 1</span><br>
+        <span class="event-description">This workshop will explore the principles of sustainable development and how we can integrate them into everyday life.</span>
+      </h3>
+    </div>
+
+    <!-- Event Card 3 -->
+    <div class="card past-card" onclick="location.href='Register3-details.html'" style="cursor: pointer;">
+      <img src="img3/1734372166175.jpg" alt="Event 3">
+      <button class="register-btn" onclick="event.stopPropagation(); openModal('International Business Summit')">Register now</button>
+      <h3>
+        <span class="event-title">International Business Summit</span><br>
+        <span class="event-date">Date: May 5, 2025, 2:00 PM</span><br>
+        <span class="event-location">Location: Business Conference Center</span><br>
+        <span class="event-description">A summit bringing together global business leaders to discuss trends and strategies in the modern business landscape.</span>
+      </h3>
+    </div>
+  </main>
+
+  <footer class="Knowledge_page_footer">
+    <!-- تذييل الصفحة -->
+    <div>
+      <div class="Knowledge_page_footer_icons">
+        <!-- أيقونات الشبكات الاجتماعية -->
+        <a href="#" class="footer_icon"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="footer_icon"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="footer_icon"><i class="fab fa-linkedin"></i></a>
+        <a href="#" class="footer_icon"><i class="fab fa-instagram"></i></a>
+      </div>
+      <p>&copy; 2024 IT Department. All Rights Reserved.</p>
+      <!-- نص حقوق الطبع والنشر -->
+    </div>
+  </footer>
+
+  <script>
+    function openModal(eventName) {
+      alert('Registering for: ' + eventName);
+    }
+  </script>
+</body>
+</html>

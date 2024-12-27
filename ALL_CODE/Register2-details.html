@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+  <link rel="icon" type="image/x-icon" href="1734464110329.png">
+    <!-- Adding Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Adding Lightbox Library -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+    <!-- Linking External CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="body1">
+    <header class="header1">
+        <nav>
+            <ul>
+                <li><a href="register-event.html">Register in Events</a></li>
+                <li><a href="past-events.html">Past Events</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="event-title">Sustainable Development Workshop</h1>
+        
+        <!-- Carousel -->
+        <div id="carouselExampleInterval" class="carousel slide mx-auto" data-bs-ride="carousel" style="max-width: 800px;">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="5000">
+                    <a href="img3/1734344683927.webp" data-lightbox="event-gallery">
+                        <img src="img3/1734344683927.webp" class="d-block w-100" alt="Workshop Image 1">
+                    </a>
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <a href="img3/1734370004652.png" data-lightbox="event-gallery">
+                        <img src="img3/1734370004652.png" class="d-block w-100" alt="Workshop Image 2">
+                    </a>
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <a href="img3/1734370272538.jpg" data-lightbox="event-gallery">
+                        <img src="img3/1734370272538.jpg" class="d-block w-100" alt="Workshop Image 3">
+                    </a>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <section class="description">
+            <p>
+                <span class="strong">Date:</span> April 10, 2025, 10:00 AM<br>
+                <span class="strong">Location:</span> Workshop Hall 1
+            </p>
+            <p>
+                This workshop will explore the principles of sustainable development and how we can integrate them into everyday life.
+            </p>
+            <p>
+                The focus will be on practical strategies for reducing our environmental footprint, conserving resources, and promoting social equity. Participants will learn actionable steps they can take in their personal, professional, and community lives to contribute to a more sustainable future.
+            </p>
+            <p>
+                Through interactive discussions and hands-on activities, this workshop aims to inspire and equip individuals to play a role in shaping a more sustainable world.
+            </p>
+        </section>
+
+        <!-- Adding More Information -->
+        <section class="additional-info">
+            <h2>Introduction to Sustainable Development</h2>
+            <p>Sustainable development is the process of balancing the needs of the present with ensuring that future generations can meet their own needs...</p>
+            
+            <h3>Workshop Goals</h3>
+            <ul>
+                <li>Introduce participants to the concepts of sustainable development.</li>
+                <li>Present effective strategies for reducing environmental impact.</li>
+                <li>Enhance understanding of social justice and its role in sustainable development.</li>
+                <li>Encourage innovation in sustainability solutions across different sectors.</li>
+            </ul>
+
+            <h3>Agenda</h3>
+            <!-- Updated table with custom class -->
+<table class="table table-striped table-custom">
+    <thead>
+        <tr>
+            <th>Time</th>
+            <th>Activity</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>10:00 AM - 10:30 AM</td><td>Registration and Networking</td></tr>
+        <tr><td>10:30 AM - 11:30 AM</td><td>Introduction to Sustainable Development</td></tr>
+        <tr><td>11:30 AM - 12:30 PM</td><td>Interactive Workshop on Environmental Footprint Reduction Strategies</td></tr>
+        <tr><td>12:30 PM - 1:30 PM</td><td>Break and Lunch</td></tr>
+        <tr><td>1:30 PM - 2:30 PM</td><td>Session on Social Justice in Sustainable Development</td></tr>
+        <tr><td>2:30 PM - 3:30 PM</td><td>Hands-on Activities and Case Study Analysis</td></tr>
+        <tr><td>3:30 PM - 4:00 PM</td><td>Workshop Conclusion and Sign-up for Future Activities</td></tr>
+    </tbody>
+</table>
+
+            <h3>Key Speakers</h3>
+            <ul>
+                <li>Dr. Ahmed Mohamed – Expert in Sustainable Development</li>
+                <li>Dr. Nora Al-Otaibi – Environmental Consultant</li>
+                <li>Ms. Sara Al-Jassim – Social Justice Specialist</li>
+            </ul>
+            
+            <h3>Testimonials</h3>
+            <p>"The workshop was amazing! I learned many practical tips that I can apply in my daily life..." – Ahmed, a participant in a previous workshop.</p>
+
+            <h3>Partners and Sponsors</h3>
+            <p>We thank our partners for this event: [Company/Organization Names].</p>
+
+            <h3>Health and Safety Measures</h3>
+            <p>Due to current health circumstances, all necessary precautionary measures will be taken to ensure the safety of all attendees...</p>
+
+            <h3>Transportation and Accommodation</h3>
+            <p>If you are coming from outside the city, we offer accommodation options near the venue...</p>
+        </section>
+
+        <!-- "Register for the Event" Button -->
+        <button id="registerBtn" class="btn btn-primary my-3 d-block mx-auto" data-bs-toggle="modal" data-bs-target="#registerModal">Register for the Event</button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="registerModalLabel">Register for the Sustainable Development Workshop</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="studentName" class="form-label">Student Name:</label>
+                                <input type="text" id="studentName" name="studentName" class="form-control" placeholder="Enter your name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="studentEmail" class="form-label">University Email:</label>
+                                <input type="email" id="studentEmail" name="studentEmail" class="form-control" placeholder="Enter your university email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="studentID" class="form-label">Student ID:</label>
+                                <input type="text" id="studentID" name="studentID" class="form-control" placeholder="Enter your student ID" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="university" class="form-label">University:</label>
+                                <input type="text" id="university" name="university" class="form-control" placeholder="Enter your university name" required>
+                            </div>
+                            <button type="submit" class="btn btn-success w-100">Register</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Adding Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Adding Lightbox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+</body>
+</html>
